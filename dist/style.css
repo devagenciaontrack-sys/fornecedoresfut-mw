@@ -76,7 +76,7 @@ section{ padding-block:88px; }
   .hero-grid{ grid-template-columns:1.25fr .75fr; grid-template-areas:"head video" "body video"; column-gap:88px; row-gap:40px; align-items:end; }
   .hero-body{ align-self:start; }
 }
-h1{ font-size:clamp(52px, 7.2vw, 100px); line-height:.95; letter-spacing:-.025em; }
+h1{ font-size:clamp(52px, 7.2vw, 100px); line-height:1.02; letter-spacing:-.025em; }
 .lead{ font-size:clamp(17px, 1.5vw, 19px); color:var(--muted); max-width:40ch; margin-bottom:32px; }
 .cta-row{ display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; }
 @media (max-width:620px){ .cta-row .btn{ width:100%; } }
@@ -185,3 +185,12 @@ h1{ font-size:clamp(52px, 7.2vw, 100px); line-height:.95; letter-spacing:-.025em
 .sticky .btn{ width:100%; }
 @media (min-width:900px){ .sticky{ display:none; } }
 @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+
+/* ---------- toque humano (v2): papel, foto real, imperfeição discreta ---------- */
+:root{ --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+body::after{ content:""; position:fixed; inset:0; z-index:200; pointer-events:none; background-image:var(--grain); opacity:.08; mix-blend-mode:multiply; }
+.invite{ transform:rotate(1.5deg); }
+.video-poster img{ filter:saturate(.85) contrast(1.03) sepia(.08); }
+.chat{ transform:rotate(-1deg); }
+.minute-left{ display:flex; align-items:center; gap:22px; }
+.minute-photo{ width:76px; height:100px; object-fit:cover; object-position:center 28%; border:4px solid #fff; box-shadow:0 12px 24px -14px rgba(17,17,17,.6); transform:rotate(-4deg); filter:saturate(.85) sepia(.08); }
