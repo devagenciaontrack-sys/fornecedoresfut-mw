@@ -1,0 +1,187 @@
+/* Fornecedores Fut — conceito: convite de clube editorial. Marfim, preto, vinho e dourado fosco; serifa grande, linhas finas, muito espaço. */
+:root{
+  --black:#111111;
+  --wine:#471E2A;
+  --ivory:#F5F0E7;
+  --ivory-2:#ECE5D8;
+  --gold:#B4935E;
+  --warm:#A8A19A;
+  --text:#2A2624;
+  --muted:#6F6862;
+  --line:rgba(17,17,17,.16);
+  --line-light:rgba(245,240,231,.18);
+  --serif:'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{ margin:0; background:var(--ivory); color:var(--text); font-family:var(--sans); font-size:16.5px; line-height:1.65; overflow-x:hidden; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+h1,h2,h3{ font-family:var(--serif); font-weight:500; margin:0; line-height:1; letter-spacing:-.015em; text-wrap:balance; }
+h2{ font-size:clamp(42px, 6vw, 80px); }
+h1 em, h2 em, .minute-title em, .logo-name em{ font-style:italic; color:var(--wine); }
+p{ margin:0; }
+.wrap{ width:100%; max-width:1200px; margin:0 auto; padding-inline:20px; }
+@media (min-width:900px){ .wrap{ padding-inline:40px; } }
+.ic{ width:18px; height:18px; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.skip{ position:absolute; left:-9999px; }
+.skip:focus{ left:16px; top:16px; z-index:100; background:var(--black); color:var(--ivory); padding:10px 14px; }
+section{ padding-block:88px; }
+@media (min-width:900px){ section{ padding-block:140px; } }
+
+.eyebrow{ display:flex; align-items:center; gap:14px; font-size:11.5px; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); margin-bottom:28px; }
+.eyebrow::before{ content:""; width:40px; height:1px; background:var(--gold); }
+.eyebrow .sep{ color:var(--gold); }
+.eyebrow-gold{ color:var(--gold); }
+
+/* botões: retos, finos, sem cor de SaaS */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:14px; border:0; border-radius:2px; font-family:var(--sans); font-weight:600; letter-spacing:.16em; text-decoration:none; cursor:pointer; transition:background .25s, color .25s, gap .25s; }
+.btn:hover{ gap:20px; }
+.btn:focus-visible{ outline:2px solid var(--gold); outline-offset:4px; }
+.btn-sm{ padding:12px 18px; font-size:11px; }
+.btn-lg{ padding:20px 30px; font-size:12.5px; min-height:60px; }
+.btn-dark{ background:var(--black); color:var(--ivory); }
+.btn-dark:hover{ background:var(--wine); }
+.btn-ivory{ background:var(--ivory); color:var(--black); }
+.btn-ivory:hover{ background:var(--white, #fff); }
+.micro{ font-size:13.5px; color:var(--muted); }
+.micro-light{ color:rgba(245,240,231,.7); }
+
+/* topo */
+.topbar{ position:sticky; top:0; z-index:50; background:var(--ivory); border-bottom:1px solid var(--line); }
+.topbar-in{ display:flex; align-items:center; gap:24px; min-height:72px; }
+.logo{ display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:var(--black); }
+.mono{ width:38px; height:38px; flex:none; border-radius:50%; display:grid; place-items:center; border:1px solid var(--gold); font-family:var(--serif); font-style:italic; font-size:17px; color:var(--black); }
+.mono-sm{ width:34px; height:34px; font-size:15px; }
+.logo-name{ font-family:var(--serif); font-size:23px; font-weight:600; letter-spacing:-.01em; }
+.logo-light{ color:var(--ivory); }
+.logo-light .mono{ color:var(--ivory); }
+.logo-light .logo-name em{ color:var(--gold); }
+.nav{ display:none; gap:34px; margin-left:auto; }
+.nav a{ text-decoration:none; font-size:13.5px; font-weight:500; color:var(--muted); letter-spacing:.02em; }
+.nav a:hover{ color:var(--black); }
+.topbar .btn{ margin-left:auto; }
+@media (min-width:960px){ .nav{ display:flex; } .topbar .btn{ margin-left:10px; } }
+@media (max-width:520px){ .topbar .btn{ display:none; } .logo-name{ font-size:21px; } }
+
+/* HERO */
+.hero{ padding-block:48px 80px; }
+.hero-grid{ display:grid; gap:36px; grid-template-areas:"head" "video" "body"; }
+.hero-head{ grid-area:head; }
+.hero-video{ grid-area:video; }
+.hero-body{ grid-area:body; }
+@media (min-width:900px){
+  .hero{ padding-block:96px 140px; }
+  .hero-grid{ grid-template-columns:1.25fr .75fr; grid-template-areas:"head video" "body video"; column-gap:88px; row-gap:40px; align-items:end; }
+  .hero-body{ align-self:start; }
+}
+h1{ font-size:clamp(52px, 7.2vw, 100px); line-height:.95; letter-spacing:-.025em; }
+.lead{ font-size:clamp(17px, 1.5vw, 19px); color:var(--muted); max-width:40ch; margin-bottom:32px; }
+.cta-row{ display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; }
+@media (max-width:620px){ .cta-row .btn{ width:100%; } }
+
+/* convite com o vídeo */
+.hero-video{ justify-self:center; width:min(100%, 360px); }
+.invite{ position:relative; padding:18px; background:var(--ivory-2); outline:1px solid var(--gold); outline-offset:-8px; box-shadow:0 40px 80px -50px rgba(17,17,17,.6); }
+.invite::before{ content:""; position:absolute; inset:12px; border:1px solid rgba(180,147,94,.45); pointer-events:none; }
+.invite-label, .invite-foot{ position:relative; display:flex; justify-content:space-between; font-size:10.5px; font-weight:600; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); padding:8px 10px 14px; }
+.invite-foot{ justify-content:center; padding:14px 10px 6px; font-family:var(--serif); font-size:16px; font-style:italic; letter-spacing:.02em; text-transform:none; color:var(--muted); }
+.invite-frame{ position:relative; aspect-ratio:9 / 16; overflow:hidden; background:var(--black); }
+.invite-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.video-poster{ position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; cursor:pointer; background:none; color:var(--ivory); font:inherit; }
+.video-poster img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.75) contrast(1.05); }
+.video-poster::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(17,17,17,.15), rgba(17,17,17,.1) 50%, rgba(71,30,42,.85)); }
+.play{ position:absolute; z-index:1; left:50%; top:50%; width:76px; height:76px; margin:-38px 0 0 -38px; border-radius:50%; display:grid; place-items:center; background:rgba(17,17,17,.35); border:1px solid var(--ivory); color:var(--ivory); transition:transform .3s, background .3s; }
+.play .ic{ width:22px; height:22px; fill:currentColor; margin-left:3px; }
+.video-poster:hover .play{ transform:scale(1.06); background:var(--wine); }
+.play-text{ position:absolute; z-index:1; left:0; right:0; bottom:22px; text-align:center; font-family:var(--serif); font-style:italic; font-size:21px; }
+.video-poster:focus-visible{ outline:2px solid var(--gold); outline-offset:-4px; }
+
+/* 02 — pilares editoriais */
+.pillars{ background:var(--black); color:var(--ivory); }
+.pillars h2 em{ color:var(--gold); }
+.pillars-head{ display:grid; gap:28px; margin-bottom:72px; }
+@media (min-width:900px){ .pillars-head{ grid-template-columns:1.2fr .8fr; gap:80px; align-items:end; margin-bottom:110px; } }
+.concept{ font-family:var(--serif); font-style:italic; font-size:clamp(22px, 2.2vw, 28px); line-height:1.35; color:rgba(245,240,231,.8); max-width:24ch; }
+.pillar-list{ list-style:none; margin:0; padding:0; display:grid; }
+@media (min-width:800px){ .pillar-list{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
+.pillar-list li{ padding:30px 0 34px; border-top:1px solid var(--line-light); }
+@media (min-width:800px){ .pillar-list li{ padding:36px 40px 8px 0; } .pillar-list li + li{ padding-left:40px; border-left:1px solid var(--line-light); } }
+.num{ display:block; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--gold); margin-bottom:22px; }
+.pillar-list h3{ font-size:clamp(34px, 3.4vw, 46px); margin-bottom:14px; }
+.pillar-list p{ color:var(--warm); max-width:28ch; }
+
+/* 03 — mensagens */
+.inside-grid{ display:grid; gap:56px; }
+@media (min-width:900px){ .inside-grid{ grid-template-columns:1fr 1fr; gap:96px; align-items:center; } }
+.inside-text{ margin-top:24px; color:var(--muted); max-width:34ch; }
+.chat{ margin:0; position:relative; justify-self:center; width:min(100%, 440px); background:var(--black); color:var(--ivory); padding:22px 22px 30px; box-shadow:0 50px 90px -50px rgba(17,17,17,.7); }
+.chat-tag{ position:absolute; top:-13px; left:22px; padding:5px 12px; background:var(--gold); color:var(--black); font-size:10.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; }
+.chat-head{ display:flex; align-items:center; gap:12px; padding:14px 0 18px; border-bottom:1px solid var(--line-light); }
+.chat-head .mono{ color:var(--ivory); }
+.chat-head b{ display:block; font-family:var(--serif); font-size:21px; font-weight:600; line-height:1.1; }
+.chat-head small{ display:block; font-size:12px; color:var(--warm); letter-spacing:.04em; }
+.chat-body{ display:flex; flex-direction:column; gap:12px; padding-top:22px; }
+.bubble{ align-self:flex-start; max-width:85%; padding:13px 18px; background:#1E1C1B; border-left:2px solid var(--gold); font-size:15.5px; }
+.bubble:nth-child(2){ background:var(--wine); border-left-color:transparent; }
+
+/* 04 — público em lista editorial */
+.audience{ background:var(--ivory-2); }
+.audience-grid{ display:grid; gap:48px; }
+@media (min-width:900px){ .audience-grid{ grid-template-columns:1fr 1fr; gap:96px; align-items:start; } }
+.audience h2{ font-size:clamp(40px, 5vw, 68px); }
+.audience-list{ list-style:none; margin:0; padding:0; counter-reset:a; }
+.audience-list li{ counter-increment:a; display:flex; align-items:baseline; gap:22px; padding:22px 0; border-bottom:1px solid var(--line); font-family:var(--serif); font-size:clamp(25px, 2.6vw, 34px); line-height:1.15; }
+.audience-list li:first-child{ border-top:1px solid var(--line); }
+.audience-list li::before{ content:counter(a, decimal-leading-zero); flex:none; font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:.16em; color:var(--gold); }
+
+/* 05 — faixa curta do vídeo */
+.minute{ padding-block:44px; border-bottom:1px solid var(--line); }
+.minute-in{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px 32px; }
+.minute-title{ font-family:var(--serif); font-size:clamp(30px, 3.4vw, 44px); line-height:1.1; }
+.link-play{ display:inline-flex; align-items:center; gap:14px; text-decoration:none; font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; }
+.play-sm{ position:static; width:52px; height:52px; margin:0; background:transparent; border-color:var(--black); color:var(--black); }
+.play-sm .ic{ width:16px; height:16px; }
+.link-play:hover .play-sm{ background:var(--black); color:var(--ivory); }
+
+/* CTA final — vinho */
+.final{ background:var(--wine); color:var(--ivory); text-align:center; }
+.final-in{ display:flex; flex-direction:column; align-items:center; }
+.final .eyebrow{ justify-content:center; }
+.final .eyebrow::after{ content:""; width:40px; height:1px; background:var(--gold); }
+.final h2{ font-size:clamp(46px, 7vw, 96px); max-width:14ch; margin-bottom:44px; }
+.final h2 em{ color:var(--gold); }
+.final .micro{ margin-top:18px; }
+@media (max-width:620px){ .final .btn{ width:100%; } }
+
+/* FAQ */
+.faq-grid{ display:grid; gap:40px; }
+@media (min-width:900px){ .faq-grid{ grid-template-columns:.8fr 1.2fr; gap:96px; } }
+.faq h2{ font-size:clamp(40px, 5vw, 64px); }
+.faq-list{ border-top:1px solid var(--line); }
+.faq details{ border-bottom:1px solid var(--line); }
+.faq summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:24px 0; font-family:var(--serif); font-size:clamp(22px, 2vw, 26px); font-weight:500; line-height:1.2; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:""; flex:none; width:12px; height:12px; border-right:1px solid var(--black); border-bottom:1px solid var(--black); transform:rotate(45deg) translate(-3px,-3px); transition:transform .25s; }
+.faq details[open] summary::after{ transform:rotate(225deg); }
+.faq details p{ padding:0 0 26px; color:var(--muted); max-width:58ch; }
+.faq .tbd{ font-style:italic; color:var(--warm); }
+
+/* rodapé */
+.footer{ background:var(--black); color:var(--warm); padding-block:56px 130px; font-size:14px; }
+@media (min-width:900px){ .footer{ padding-block:64px; } }
+.footer-in{ display:grid; gap:32px; }
+@media (min-width:900px){ .footer-in{ grid-template-columns:1fr 1.2fr auto; gap:56px; align-items:start; } }
+.footer-company{ display:grid; gap:14px; }
+.footer-company strong{ color:var(--ivory); font-weight:600; letter-spacing:.06em; font-size:12.5px; }
+.footer-links{ display:flex; flex-wrap:wrap; gap:10px 24px; }
+@media (min-width:900px){ .footer-links{ flex-direction:column; } }
+.footer-links a{ text-decoration:none; color:var(--ivory); }
+.footer-links a:hover{ color:var(--gold); }
+
+/* CTA fixo no celular */
+.sticky{ position:fixed; z-index:60; left:0; right:0; bottom:0; padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px)); background:var(--ivory); border-top:1px solid var(--line); }
+.sticky .btn{ width:100%; }
+@media (min-width:900px){ .sticky{ display:none; } }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
