@@ -70,7 +70,7 @@ section{ padding-block:96px; }
 @media (max-width:520px){ .topbar .btn{ display:none; } .logo-name{ font-size:19px; } }
 
 /* HERO — capa escura */
-.hero{ position:relative; overflow:hidden; background:radial-gradient(120% 90% at 85% 10%, var(--wine) 0%, var(--black-2) 55%, var(--black) 100%); color:var(--ivory); padding-block:48px 88px; }
+.hero{ position:relative; overflow:hidden; background:var(--black); color:var(--ivory); padding-block:48px 88px; }
 .hero::before{ content:""; position:absolute; inset:0; background-image:var(--grain); opacity:.25; mix-blend-mode:overlay; pointer-events:none; }
 .hero-grid{ position:relative; display:grid; gap:36px; grid-template-areas:"head" "photo" "body"; }
 .hero-head{ grid-area:head; }
@@ -198,3 +198,18 @@ h1 em{ color:var(--gold); }
 .sticky .btn{ width:100%; }
 @media (min-width:900px){ .sticky{ display:none; } }
 @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } .btn, .play{ transition:none; } }
+
+/* revisão: as duas frases de abertura em itálico discreto, sem caixa alta nem tracinho */
+.eyebrow{ font-family:var(--serif); font-style:italic; font-weight:500; font-size:19px; letter-spacing:0; text-transform:none; color:var(--gold); }
+.eyebrow::before, .final .eyebrow::after{ display:none; }
+.eyebrow span{ opacity:.5; margin-inline:2px; }
+/* pilares sem numeração: não são uma sequência */
+.toc li{ grid-template-columns:1fr; }
+/* a capa ganha um bloco vinho sólido atrás da foto, no lugar do degradê */
+@media (min-width:900px){ .hero-photo::after{ content:""; position:absolute; z-index:-1; left:38%; right:-40vw; top:12%; bottom:-140px; background:var(--wine); } .hero-photo{ isolation:isolate; } }
+
+
+/* ---------- revisão: regras de interface (toque, âncoras, foco) ---------- */
+html{ touch-action:manipulation; -webkit-tap-highlight-color:rgba(180,147,94,.22); }
+main [id]{ scroll-margin-top:86px; }
+@media (max-width:959px){ html{ scroll-padding-bottom:96px; } }
