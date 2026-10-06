@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -22,7 +22,6 @@
   <defs>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7Z"/></symbol>
-    <symbol id="h-tick" viewBox="0 0 32 32"><path d="M5 17c3 1.5 6 5 7.5 9 3.5-9 9-16.5 15-21"/></symbol>
   </defs>
 </svg>
 
@@ -47,15 +46,13 @@
 
 <main id="conteudo">
 
-  <!-- HERO -->
+  <!-- HERO: convite simétrico — título à esquerda, o vídeo no eixo central sobre uma faixa vinho, o convite à direita -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-head">
-        <p class="eyebrow">Fornecedores Fut <span>/</span> Grupo VIP</p>
-        <h1>Tem coisa que você não precisa procurar sozinho.</h1>
-      </div>
+    <div class="wrap hero-tri">
+      <p class="eyebrow">Fornecedores Fut <span>/</span> Grupo VIP</p>
+      <h1 class="tri-head">Tem coisa que você não precisa procurar sozinho.</h1>
 
-      <div class="hero-photo">
+      <div class="tri-video">
         <div class="frame" id="video" data-video-id="jcesguEg7XI" data-track-play="fornecedores_video_play">
           <button class="video-poster" type="button" aria-label="Assistir ao convite do Grupo VIP">
             <img src="assets/video-capa.jpg" alt="" width="720" height="1280" decoding="async" fetchpriority="high">
@@ -66,13 +63,11 @@
         <p class="photo-note">O convite, em menos de um minuto.</p>
       </div>
 
-      <div class="hero-body">
+      <div class="tri-body">
         <p class="lead">Entre no Grupo VIP da Fornecedores Fut e acompanhe novidades, informações e oportunidades reunidas em um único lugar.</p>
-        <div class="cta-row">
-          <!-- TODO: substituir pelo link real: [INSERIR_LINK_REAL_DO_GRUPO_VIP] -->
-          <a class="btn btn-gold btn-lg" href="#" data-group data-track="fornecedores_group_click" data-location="hero">ENTRAR NO GRUPO VIP</a>
-          <p class="micro">Você pode sair quando quiser.</p>
-        </div>
+        <!-- TODO: substituir pelo link real: [INSERIR_LINK_REAL_DO_GRUPO_VIP] -->
+        <a class="btn btn-gold btn-lg" href="#" data-group data-track="fornecedores_group_click" data-location="hero">ENTRAR NO GRUPO VIP</a>
+        <p class="micro">Você pode sair quando quiser.</p>
       </div>
     </div>
   </section>
@@ -120,17 +115,14 @@
 
   <!-- 04 -->
   <section class="guests">
-    <div class="wrap guests-grid">
+    <div class="wrap guests-in">
       <h2>Para quem prefere acompanhar em vez de descobrir tarde.</h2>
-      <div class="guestlist">
-        <p class="guestlist-title">A lista</p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#h-tick"/></svg>Lojistas</li>
-          <li><svg aria-hidden="true"><use href="#h-tick"/></svg>Revendedores</li>
-          <li><svg aria-hidden="true"><use href="#h-tick"/></svg>Pessoas pesquisando o segmento</li>
-          <li><svg aria-hidden="true"><use href="#h-tick"/></svg>Pessoas interessadas em novidades do mercado</li>
-        </ul>
-      </div>
+      <ul class="guest-names">
+        <li>Lojistas</li>
+        <li>Revendedores</li>
+        <li>Pessoas pesquisando o segmento</li>
+        <li>Pessoas interessadas em novidades do mercado</li>
+      </ul>
     </div>
   </section>
 
